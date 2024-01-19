@@ -1,6 +1,6 @@
 # PM-Test
 
-Test repo for prediction markets engineering position.
+Test repo for prediction markets engineering position. Uses 0x contracts.
 
 ## Install dependencies
 ```shell
