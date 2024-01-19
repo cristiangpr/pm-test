@@ -6,7 +6,7 @@ export const matchOrders = async (sellOrder: RfqOrder, buyOrders: RfqOrder[], ex
   const amount = new BigNumber(0)
   const result = []
   for (let i = 0; i < buyOrders.length; i += 1) {
-    if (sellOrder.makerToken === buyOrders[i].takerToken && sellOrder.makerAmount.lte(buyOrders[i].makerAmount)) {
+    if (sellOrder.makerToken === buyOrders[i].takerToken) {
       const signature: Signature = await sellOrder.getSignatureWithProviderAsync(provider, undefined, sellOrder.maker)
       const tx = await exchange
         .fillRfqOrder(sellOrder, signature, sellOrder.makerAmount)
